@@ -15,6 +15,7 @@ const Home = () => {
       console.log(error.message);
     }
   };
+
   return (
     <>
       <div className="p-4 box mt-3 text-center">

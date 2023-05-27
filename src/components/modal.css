@@ -1,0 +1,89 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    z-index: 9999;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.category-list {
+    margin-top: 20px;
+}
+
+.category-group {
+    margin-bottom: 20px;
+}
+
+.category-group h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.category-item {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.category-item:hover {
+    background-color: #e1e1e1;
+}
+
+.category-item.income {
+    background-color: #3bb85f;
+    color: white;
+}
+
+.category-item.expense {
+    background-color: #d9534f;
+    color: white;
+}
+
+.popup-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.category-btn {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.category-btn:hover {
+    background-color: #45c9ed;
+}

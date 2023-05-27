@@ -28,6 +28,7 @@ const Signup = () => {
       const setIncome = doc(db, user.uid, 'income');
       const setBcatIncome = doc(db, `${user.uid}/income/categories`, 'business');
       const setIcatIncome = doc(db, `${user.uid}/income/categories`, 'investment-returns');
+      const setScatIncIncome = doc(db, `${user.uid}/income/categories`, 'incoming-transfer');
       const setOcatIncome = doc(db, `${user.uid}/income/categories`, 'others');
       const setScatIncome = doc(db, `${user.uid}/income/categories`, 'salary');
 
@@ -46,7 +47,9 @@ const Signup = () => {
       setDoc(setBcatIncome, { capital: true }, { merge: true });
       setDoc(setIcatIncome, { capital: true }, { merge: true });
       setDoc(setOcatIncome, { capital: true }, { merge: true });
+      setDoc(setScatIncIncome, { capital: true }, { merge: true });
       setDoc(setScatIncome, { capital: true }, { merge: true });
+
 
       setDoc(setExpense,{total:"0"}, { capital: true }, { merge: true });
       setDoc(setFExpense, { capital: true }, { merge: true });
