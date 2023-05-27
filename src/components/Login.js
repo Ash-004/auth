@@ -92,4 +92,5 @@ const Login = () => {
   );
 };
 
+// export const userid = user.uid;
 export default Login;

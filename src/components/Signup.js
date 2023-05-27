@@ -24,13 +24,47 @@ const Signup = () => {
       const userCredential = await signUp(email, password);
       const user = userCredential.user;
 
+      const setBalance = doc(db, user.uid,"balance");
+      const setIncome = doc(db, user.uid, 'income');
+      const setBcatIncome = doc(db, `${user.uid}/income/categories`, 'business');
+      const setIcatIncome = doc(db, `${user.uid}/income/categories`, 'investment-returns');
+      const setOcatIncome = doc(db, `${user.uid}/income/categories`, 'others');
+      const setScatIncome = doc(db, `${user.uid}/income/categories`, 'salary');
+
+
+      const setExpense = doc(db, user.uid, 'expense');
+      const setFExpense = doc(db, `${user.uid}/expense/categories`, 'food');
+      const setOExpense = doc(db, `${user.uid}/expense/categories`, 'others');
+      const setRExpense = doc(db, `${user.uid}/expense/categories`, 'rent');
+      const setSExpense = doc(db, `${user.uid}/expense/categories`, 'shopping');
+      const setTExpense = doc(db, `${user.uid}/expense/categories`, 'travel');
+
+      const setBudget = doc(db, user.uid, 'budget');
+
+      setDoc(setBalance,{total:"0"}, { capital: true }, { merge: true });
+      setDoc(setIncome,{total:"0"}, { capital: true }, { merge: true });
+      setDoc(setBcatIncome, { capital: true }, { merge: true });
+      setDoc(setIcatIncome, { capital: true }, { merge: true });
+      setDoc(setOcatIncome, { capital: true }, { merge: true });
+      setDoc(setScatIncome, { capital: true }, { merge: true });
+
+      setDoc(setExpense,{total:"0"}, { capital: true }, { merge: true });
+      setDoc(setFExpense, { capital: true }, { merge: true });
+      setDoc(setOExpense, { capital: true }, { merge: true });
+      setDoc(setRExpense, { capital: true }, { merge: true });
+      setDoc(setSExpense, { capital: true }, { merge: true });
+      setDoc(setTExpense, { capital: true }, { merge: true });
+
+      setDoc(setBudget,{total:"0"}, { capital: true }, { merge: true });
+
+
 
       // Define the document reference and data for the new user document
       const docRef = doc(db, "users", user.uid);
       const data = {
         // Add the necessary fields for the new user document
         // For example, you can include a username field
-        username: "example",
+        username: username,
       };
 
       // Add the document to the "users" collection
@@ -87,5 +121,6 @@ const Signup = () => {
     </>
   );
 };
+
 
 export default Signup;
